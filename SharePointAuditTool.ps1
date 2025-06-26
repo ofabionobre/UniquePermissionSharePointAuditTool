@@ -37,7 +37,7 @@ function Write-LogHost {
 # Function to create the graphical interface
 function Show-ConfigurationForm {
     $form = New-Object System.Windows.Forms.Form
-    $form.Text = "LanLink -Audit Permission SharePoint - Configuração"
+    $form.Text = "Audit Permission SharePoint"
     $form.Size = New-Object System.Drawing.Size(500, 470)
     $form.StartPosition = "CenterScreen"
     $form.FormBorderStyle = "FixedDialog"
