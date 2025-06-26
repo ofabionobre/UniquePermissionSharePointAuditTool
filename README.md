@@ -126,7 +126,25 @@ Write-Host "`nPress any key to exit..." -ForegroundColor Gray
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 ```
 
-### Step 5: Upload Certificate to Azure App Registration
+### Step 5: Install Certificate on Your Computer
+
+**Important:** The certificate must be installed on the computer where the script will run.
+
+1. **Install the certificate in the personal store:**
+   - Open the generated `.pfx` file
+   - Follow the Certificate Import Wizard
+   - Choose "Current User" store location
+   - Enter the password you set during generation
+   - Select "Personal" certificate store
+   - Complete the installation
+
+2. **Verify installation:**
+   ```powershell
+   # Verify the certificate is installed
+   Get-ChildItem -Path "Cert:\CurrentUser\My" | Where-Object { $_.Subject -like "*SharePointAuditTool*" }
+   ```
+
+### Step 6: Upload Certificate to Azure App Registration
 
 1. In your App Registration, go to **Certificates & secrets**
 2. Click **Upload certificate**
@@ -246,10 +264,21 @@ Import-Module -Name PnP.PowerShell
 **Error**: Certificate-related authentication failures
 
 **Solutions**:
-- Regenerate certificate using the provided script
-- Ensure certificate is in `Cert:\CurrentUser\My` store
-- Verify certificate hasn't expired
-- Check thumbprint matches exactly (no extra spaces)
+- **Regenerate certificate** using the provided script
+- **Ensure certificate is installed correctly:**
+  ```powershell
+  # Check if certificate exists in the correct store
+  Get-ChildItem -Path "Cert:\CurrentUser\My" | Where-Object { $_.Subject -like "*SharePointAuditTool*" }
+  ```
+- **Reinstall certificate if needed:**
+  - Double-click the `.pfx` file
+  - Follow the import wizard
+  - Choose "Current User" store
+  - Enter the password
+  - Select "Personal" certificate store
+- **Verify certificate hasn't expired**
+- **Check thumbprint matches exactly** (no extra spaces)
+- **Ensure the certificate has a private key** associated with it
 
 #### 5. Large Site Collections
 **Issue**: Script times out on large sites
@@ -450,7 +479,25 @@ Write-Host "`nPressione qualquer tecla para sair..." -ForegroundColor Gray
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 ```
 
-### Passo 5: Fazer Upload do Certificado para o Registro de Aplicativo Azure
+### Passo 5: Instalar o Certificado no Computador
+
+**Importante:** O certificado deve ser instalado no computador onde o script será executado.
+
+1. **Instalar o certificado no repositório pessoal:**
+   - Abra o arquivo `.pfx` gerado
+   - Siga o Assistente de Importação de Certificado
+   - Escolha o local do repositório "Usuário Atual"
+   - Digite a senha definida durante a geração
+   - Selecione o repositório de certificados "Pessoal"
+   - Complete a instalação
+
+2. **Verificar a instalação:**
+   ```powershell
+   # Verificar se o certificado está instalado
+   Get-ChildItem -Path "Cert:\CurrentUser\My" | Where-Object { $_.Subject -like "*SharePointAuditTool*" }
+   ```
+
+### Passo 6: Fazer Upload do Certificado para o Registro de Aplicativo Azure
 
 1. No seu Registro de Aplicativo, vá para **Certificados e segredos**
 2. Clique em **Carregar certificado**
@@ -570,10 +617,21 @@ Import-Module -Name PnP.PowerShell
 **Erro**: Falhas de autenticação relacionadas ao certificado
 
 **Soluções**:
-- Regenerar certificado usando o script fornecido
-- Certificar-se de que o certificado está no store `Cert:\CurrentUser\My`
-- Verificar se o certificado não expirou
-- Verificar se o thumbprint corresponde exatamente (sem espaços extras)
+- **Regenerar certificado** usando o script fornecido
+- **Certificar-se de que o certificado está instalado corretamente:**
+  ```powershell
+  # Verificar se o certificado existe no repositório correto
+  Get-ChildItem -Path "Cert:\CurrentUser\My" | Where-Object { $_.Subject -like "*SharePointAuditTool*" }
+  ```
+- **Reinstalar certificado se necessário:**
+  - Clique duas vezes no arquivo `.pfx`
+  - Siga o assistente de importação
+  - Escolha o repositório "Usuário Atual"
+  - Digite a senha
+  - Selecione o repositório de certificados "Pessoal"
+- **Verificar se o certificado não expirou**
+- **Verificar se o thumbprint corresponde exatamente** (sem espaços extras)
+- **Certificar-se de que o certificado tem uma chave privada** associada
 
 #### 5. Coleções de Sites Grandes
 **Problema**: Script expira em sites grandes

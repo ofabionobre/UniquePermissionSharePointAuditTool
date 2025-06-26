@@ -38,7 +38,7 @@ function Write-LogHost {
 function Show-ConfigurationForm {
     $form = New-Object System.Windows.Forms.Form
     $form.Text = "LanLink -Audit Permission SharePoint - Configuração"
-    $form.Size = New-Object System.Drawing.Size(500, 460)
+    $form.Size = New-Object System.Drawing.Size(500, 470)
     $form.StartPosition = "CenterScreen"
     $form.FormBorderStyle = "FixedDialog"
     $form.MaximizeBox = $false
@@ -142,20 +142,51 @@ function Show-ConfigurationForm {
     $generateHtmlCheckBox.Checked = $true
     $form.Controls.Add($generateHtmlCheckBox)
 
-    # Informational text
-    $infoLabel = New-Object System.Windows.Forms.Label
-    $infoLabel.Text = "Feel free to contribute to this tool at: https://github.com/ofabionobre/UniquePermissionSharePointAuditTool`nInitially developed by https://nobre.cloud"
-    $infoLabel.Location = New-Object System.Drawing.Point(20, 315)
-    $infoLabel.Size = New-Object System.Drawing.Size(450, 35)
-    $infoLabel.Font = New-Object System.Drawing.Font("Segoe UI", 8)
-    $infoLabel.ForeColor = [System.Drawing.Color]::Gray
-    $infoLabel.TextAlign = [System.Drawing.ContentAlignment]::MiddleCenter
-    $form.Controls.Add($infoLabel)
+    # Informational text with hyperlinks
+    $infoLabel1 = New-Object System.Windows.Forms.Label
+    $infoLabel1.Text = "Feel free to contribute to this tool at:"
+    $infoLabel1.Location = New-Object System.Drawing.Point(20, 315)
+    $infoLabel1.Size = New-Object System.Drawing.Size(200, 15)
+    $infoLabel1.Font = New-Object System.Drawing.Font("Segoe UI", 8)
+    $infoLabel1.ForeColor = [System.Drawing.Color]::Gray
+    $infoLabel1.TextAlign = [System.Drawing.ContentAlignment]::MiddleLeft
+    $form.Controls.Add($infoLabel1)
+
+    $githubLinkLabel = New-Object System.Windows.Forms.LinkLabel
+    $githubLinkLabel.Text = "GitHub Repository"
+    $githubLinkLabel.Location = New-Object System.Drawing.Point(220, 315)
+    $githubLinkLabel.Size = New-Object System.Drawing.Size(100, 15)
+    $githubLinkLabel.Font = New-Object System.Drawing.Font("Segoe UI", 8)
+    $githubLinkLabel.LinkColor = [System.Drawing.Color]::Blue
+    $githubLinkLabel.Add_LinkClicked({
+        Start-Process "https://github.com/ofabionobre/UniquePermissionSharePointAuditTool"
+    })
+    $form.Controls.Add($githubLinkLabel)
+
+    $infoLabel2 = New-Object System.Windows.Forms.Label
+    $infoLabel2.Text = "Initially developed by"
+    $infoLabel2.Location = New-Object System.Drawing.Point(20, 335)
+    $infoLabel2.Size = New-Object System.Drawing.Size(120, 15)
+    $infoLabel2.Font = New-Object System.Drawing.Font("Segoe UI", 8)
+    $infoLabel2.ForeColor = [System.Drawing.Color]::Gray
+    $infoLabel2.TextAlign = [System.Drawing.ContentAlignment]::MiddleLeft
+    $form.Controls.Add($infoLabel2)
+
+    $nobleLinkLabel = New-Object System.Windows.Forms.LinkLabel
+    $nobleLinkLabel.Text = "nobre.cloud"
+    $nobleLinkLabel.Location = New-Object System.Drawing.Point(140, 335)
+    $nobleLinkLabel.Size = New-Object System.Drawing.Size(70, 15)
+    $nobleLinkLabel.Font = New-Object System.Drawing.Font("Segoe UI", 8)
+    $nobleLinkLabel.LinkColor = [System.Drawing.Color]::Blue
+    $nobleLinkLabel.Add_LinkClicked({
+        Start-Process "https://nobre.cloud"
+    })
+    $form.Controls.Add($nobleLinkLabel)
 
     # Buttons
     $okButton = New-Object System.Windows.Forms.Button
     $okButton.Text = "Execute Audit"
-    $okButton.Location = New-Object System.Drawing.Point(180, 360)
+    $okButton.Location = New-Object System.Drawing.Point(180, 370)
     $okButton.Size = New-Object System.Drawing.Size(120, 30)
     $okButton.Font = New-Object System.Drawing.Font("Segoe UI", 9, [System.Drawing.FontStyle]::Bold)
     $okButton.BackColor = [System.Drawing.Color]::ForestGreen
@@ -165,7 +196,7 @@ function Show-ConfigurationForm {
 
     $cancelButton = New-Object System.Windows.Forms.Button
     $cancelButton.Text = "Cancel"
-    $cancelButton.Location = New-Object System.Drawing.Point(320, 360)
+    $cancelButton.Location = New-Object System.Drawing.Point(320, 370)
     $cancelButton.Size = New-Object System.Drawing.Size(100, 30)
     $cancelButton.Font = New-Object System.Drawing.Font("Segoe UI", 9)
     $cancelButton.BackColor = [System.Drawing.Color]::LightGray
