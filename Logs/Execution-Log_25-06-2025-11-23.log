@@ -1,0 +1,63 @@
+[2025-06-25 23:28:42]    Configurations loaded:
+[2025-06-25 23:28:42]    Site Collection URL: https://m365x98092280.sharepoint.com/sites/Mark8Pr...
+[2025-06-25 23:28:42]    Tenant ID: 5512f928...
+[2025-06-25 23:28:42]    Client ID: a88c778a...
+[2025-06-25 23:28:42]    Thumbprint: 66D9A417...
+[2025-06-25 23:28:42]    Include list items: True
+[2025-06-25 23:28:42]    Exclude limited access: True
+[2025-06-25 23:28:42]    Generate HTML report: True
+[2025-06-25 23:28:42] 
+[2025-06-25 23:28:43] ✅ Successfully connected using Application Registration
+[2025-06-25 23:28:43] 🔍 Searching all sites and sub-sites recursively...
+[2025-06-25 23:28:45] 📊 Found: 3 sites for audit
+[2025-06-25 23:28:45] 🔄 Processing site 1 of 3: Mark 8 Project Team
+[2025-06-25 23:28:45] Querying web Mark 8 Project Team
+[2025-06-25 23:28:45] https://m365x98092280.sharepoint.com/sites/Mark8ProjectTeam
+[2025-06-25 23:28:46] Number of lists 4
+[2025-06-25 23:28:46]    ✅ Site with unique permissions - including in report
+[2025-06-25 23:28:57] Design Ideas
+[2025-06-25 23:28:58] Number of items with unique permissions: 0 within list Design Ideas
+[2025-06-25 23:28:58] Documents
+[2025-06-25 23:28:58] Number of items with unique permissions: 1 within list Documents
+[2025-06-25 23:29:26] Events
+[2025-06-25 23:29:26] Number of items with unique permissions: 0 within list Events
+[2025-06-25 23:29:26] Site Pages
+[2025-06-25 23:29:26] Number of items with unique permissions: 0 within list Site Pages
+[2025-06-25 23:29:26] 🔄 Processing site 2 of 3: Teste
+[2025-06-25 23:29:26] Querying web Teste
+[2025-06-25 23:29:26] https://m365x98092280.sharepoint.com/sites/Mark8ProjectTeam/Teste
+[2025-06-25 23:29:26] 🔗 Connecting to sub-site: https://m365x98092280.sharepoint.com/sites/Mark8ProjectTeam/Teste
+[2025-06-25 23:29:27] Number of lists 4
+[2025-06-25 23:29:27]    ⏭️  Sub-site inheriting permissions - skipping site, but processing lists/items
+[2025-06-25 23:29:27] Documents
+[2025-06-25 23:29:27] Number of items with unique permissions: 0 within list Documents
+[2025-06-25 23:29:27] Site Pages
+[2025-06-25 23:29:28] Number of items with unique permissions: 0 within list Site Pages
+[2025-06-25 23:29:28] Teste Biblioteca
+[2025-06-25 23:29:33] Number of items with unique permissions: 1 within list Teste Biblioteca
+[2025-06-25 23:29:52] TesteLista
+[2025-06-25 23:29:57] Number of items with unique permissions: 1 within list TesteLista
+[2025-06-25 23:30:15] 🔙 Reconnecting to root site: https://m365x98092280.sharepoint.com/sites/Mark8ProjectTeam
+[2025-06-25 23:30:15] 🔄 Processing site 3 of 3: SubdoSubSite
+[2025-06-25 23:30:15] Querying web SubdoSubSite
+[2025-06-25 23:30:15] https://m365x98092280.sharepoint.com/sites/Mark8ProjectTeam/Teste/SubdoSubSite
+[2025-06-25 23:30:15] 🔗 Connecting to sub-site: https://m365x98092280.sharepoint.com/sites/Mark8ProjectTeam/Teste/SubdoSubSite
+[2025-06-25 23:30:15] Number of lists 2
+[2025-06-25 23:30:16]    ✅ Site with unique permissions - including in report
+[2025-06-25 23:30:19] Documents
+[2025-06-25 23:30:20] Number of items with unique permissions: 1 within list Documents
+[2025-06-25 23:30:24] Site Pages
+[2025-06-25 23:30:24] Number of items with unique permissions: 0 within list Site Pages
+[2025-06-25 23:30:24] 🔙 Reconnecting to root site: https://m365x98092280.sharepoint.com/sites/Mark8ProjectTeam
+[2025-06-25 23:30:24] Permission count: 214
+[2025-06-25 23:30:24] Saving results to AuditResults directory:
+[2025-06-25 23:30:24] Export File Path is:
+[2025-06-25 23:30:24] Number of lines exported is :
+[2025-06-25 23:30:24] Generating HTML report...
+[2025-06-25 23:30:24]    Calculating statistics...
+[2025-06-25 23:30:24]    Generating HTML...
+[2025-06-25 23:30:24]    Grouping permissions by URL...
+[2025-06-25 23:30:24] 📊 HTML report generated: C:\Users\FábioNobre\OneDrive - LANLINK\Scripts\AuditPermissionSharePoint\AuditResults\Mark 8 Project Team-Permissions_25-06-2025-11-23.html
+[2025-06-25 23:30:24] 🌐 Open the HTML file in your browser to view the complete report
+[2025-06-25 23:30:24] Script completed successfully!
+[2025-06-25 23:30:24] Execution log saved to: C:\Users\FábioNobre\OneDrive - LANLINK\Scripts\AuditPermissionSharePoint\Logs\Execution-Log_25-06-2025-11-23.log
